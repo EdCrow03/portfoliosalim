@@ -16,14 +16,14 @@ jobs:
       - name: 🐳 Connexion à DockerHub
         uses: docker/login-action@v3
         with:
-          username: ${{ dockerusername }}
-          password: ${{ dockerpassword }}
+          username: ${{ secrets.dockerusername }}
+          password: ${{ secrets.dockerpassword }}
 
       - name: 🔧 Build de l'image Docker
-        run: docker build -t ${{ dockerusername }}/portfolio:latest .
+        run: docker build -t ${{ secrets.dockerusername }}/portfolio:latest .
 
       - name: 📤 Push de l'image vers DockerHub
-        run: docker push ${{ dockerusername }}/portfolio:latest
+        run: docker push ${{ secrets.dockerusername }}/portfolio:latest
 
       - name: ☸️ Déploiement sur Kubernetes
         uses: azure/k8s-deploy@v4
@@ -31,5 +31,5 @@ jobs:
           manifests: |
             k8s/deployment.yaml
             k8s/service.yaml
-          images: ${{ dockerusername }}/portfolio:latest
+          images: ${{ secrets.dockerusername }}/portfolio:latest
           namespace: default

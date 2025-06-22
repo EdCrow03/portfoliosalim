@@ -25,6 +25,11 @@ jobs:
       - name: 📤 Push de l'image vers DockerHub
         run: docker push ${{ secrets.dockerusername }}/portfolio:latest
 
+      - name: 🔑 Configure kubeconfig
+        run: |
+          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+          chmod 600 $HOME/.kube/config
+
       - name: ☸️ Déploiement sur Kubernetes
         uses: azure/k8s-deploy@v4
         with:

@@ -1,4 +1,3 @@
-# k8s/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,6 +14,6 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: ton_dockerhub_username/portfolio:latest
+          image: dockerusername/portfolio:latest
           ports:
             - containerPort: 80

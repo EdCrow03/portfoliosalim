@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: dockerusername/portfolio:latest
+          image: ahouadsalim/portfolio:latest
           ports:
             - containerPort: 80

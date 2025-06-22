@@ -39,3 +39,12 @@ jobs:
             k8s/service.yaml
           images: ${{ secrets.dockerusername }}/portfolio:latest
           namespace: default
+
+      - name: 🔍 Vérifier l’état du pod
+        run: |
+          kubectl get pods --namespace default
+          kubectl describe pod -l app=portfolio --namespace default
+
+      - name: 📜 Voir les logs du pod
+        run: |
+          kubectl logs -l app=portfolio --namespace default

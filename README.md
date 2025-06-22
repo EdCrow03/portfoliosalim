@@ -2,9 +2,7 @@
 
 Welcome to my portfolio repository. This repository contains the source code for my portfolio website. If you'd like to use the contact form feature, please follow the instructions below to configure the `contact_form.php` file.
 
-<p align="center">
-  <img src="https://github.com/mimoudix/portfolio/blob/main/assets/resume.gif?raw=true" alt="Resume GIF" />
-</p>
+
 
 
 

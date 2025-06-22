@@ -1,0 +1,35 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Cloner le repo
+        uses: actions/checkout@v3
+
+      - name: 🐳 Connexion à DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ dockerusername }}
+          password: ${{ dockerpassword }}
+
+      - name: 🔧 Build de l'image Docker
+        run: docker build -t ${{ dockerusername }}/portfolio:latest .
+
+      - name: 📤 Push de l'image vers DockerHub
+        run: docker push ${{ dockerusername }}/portfolio:latest
+
+      - name: ☸️ Déploiement sur Kubernetes
+        uses: azure/k8s-deploy@v4
+        with:
+          manifests: |
+            k8s/deployment.yaml
+            k8s/service.yaml
+          images: ${{ dockerusername }}/portfolio:latest
+          namespace: default

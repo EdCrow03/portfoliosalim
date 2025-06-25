@@ -7,10 +7,13 @@ on:
 
 jobs:
   preparation:
-    name: Préparation & Connexion Docker
+    name: 🚀 Préparation & Connexion Docker
     runs-on: ubuntu-latest
+    outputs:
+      repo_sha: ${{ steps.checkout.outputs.sha }}
     steps:
       - name: 📥 Cloner le repo
+        id: checkout
         uses: actions/checkout@v3
 
       - name: 🐳 Connexion à DockerHub
@@ -20,7 +23,7 @@ jobs:
           password: ${{ secrets.dockerpassword }}
 
   build-and-push:
-    name: Build et Push de l'image Docker
+    name: 🛠️ Build & Push Docker
     runs-on: ubuntu-latest
     needs: preparation
     steps:
@@ -33,8 +36,8 @@ jobs:
       - name: 📤 Push de l'image vers DockerHub
         run: docker push ${{ secrets.dockerusername }}/portfolio:latest
 
-  deploy:
-    name: Déploiement Kubernetes
+  deploy-kubernetes:
+    name: ☸️ Déploiement Kubernetes
     runs-on: ubuntu-latest
     needs: build-and-push
     steps:
@@ -42,7 +45,7 @@ jobs:
         run: mkdir -p $HOME/.kube
 
       - name: 🔐 Récupérer et écrire kubeconfig
-        run: echo "${{ secrets.KUBE_CONFIG_DATA }}" > $HOME/.kube/config
+        run: echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
 
       - name: 🔒 Appliquer les droits sur kubeconfig
         run: chmod 600 $HOME/.kube/config

@@ -11,7 +11,7 @@ jobs:
 
     steps:
       # Étape 1 : Cloner et login Docker
-      - name: 🚀 Étape 1 : Cloner le repo & Connexion DockerHub
+      - name: Cloner le repo & Connexion DockerHub
         run: echo "Début de l'étape 1..."
       
       - name: 📥 Cloner le repo
@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.dockerpassword }}
 
       # Étape 2 : Build & push Docker
-      - name: 🚀 Étape 2 : Build & Push Docker
+      - name: Build & Push Docker
         run: echo "Début de l'étape 2..."
       
       - name: 🔧 Build de l'image Docker
@@ -34,7 +34,7 @@ jobs:
         run: docker push ${{ secrets.dockerusername }}/portfolio:latest
 
       # Étape 3 : Déploiement Kubernetes
-      - name: 🚀 Étape 3 : Déploiement Kubernetes
+      - name: Déploiement Kubernetes
         run: echo "Début de l'étape 3..."
       
       - name: 📁 Créer dossier kubeconfig

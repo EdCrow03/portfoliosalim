@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Étape 1 : Préparation du dépôt et connexion Docker
+      - name: 🚀 Préparation & Connexion Docker
+        run: echo "Début de la préparation..."
       - name: 📥 Cloner le repo
         uses: actions/checkout@v3
 
@@ -19,16 +22,22 @@ jobs:
           username: ${{ secrets.dockerusername }}
           password: ${{ secrets.dockerpassword }}
 
+      # Étape 2 : Build et Push de l’image Docker
+      - name: 🛠️ Build & Push Docker
+        run: echo "Build et Push en cours..."
       - name: 🔧 Build de l'image Docker
         run: docker build -t ${{ secrets.dockerusername }}/portfolio:latest .
 
       - name: 📤 Push de l'image vers DockerHub
         run: docker push ${{ secrets.dockerusername }}/portfolio:latest
 
+      # Étape 3 : Déploiement Kubernetes
+      - name: ☸️ Déploiement Kubernetes
+        run: echo "Déploiement sur Kubernetes en cours..."
       - name: 📁 Créer dossier kubeconfig
         run: mkdir -p $HOME/.kube
 
-      - name: 🔐 Récupérer et décoder kubeconfig
+      - name: 🔐 Récupérer et écrire kubeconfig
         run: echo "${{ secrets.KUBE_CONFIG_DATA }}" > $HOME/.kube/config
 
       - name: 🔒 Appliquer les droits sur kubeconfig

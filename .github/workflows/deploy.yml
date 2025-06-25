@@ -72,3 +72,4 @@ jobs:
           kubectl logs -l app=portfolio --namespace default
         env:
           KUBECONFIG: $HOME/.kube/config
+

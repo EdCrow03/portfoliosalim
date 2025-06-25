@@ -6,9 +6,8 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build-image:
     runs-on: ubuntu-latest
-
     steps:
       - name: 📥 Cloner le repo
         uses: actions/checkout@v3
@@ -27,29 +26,30 @@ jobs:
 
   configure-kube:
     runs-on: ubuntu-latest
-    needs: build-and-push  # Attend que le job précédent se termine
+    needs: build-image
     steps:
       - name: 🔑 Configure kubeconfig
         run: |
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
           chmod 600 $HOME/.kube/config
+        env:
+          KUBECONFIG: $HOME/.kube/config
 
-      - name: 📥 Cloner le repo (à nouveau nécessaire)
-        uses: actions/checkout@v3
-
-  deploy-and-verify:
+  deploy-to-kubernetes:
     runs-on: ubuntu-latest
     needs: configure-kube
     steps:
       - name: 📥 Cloner le repo
         uses: actions/checkout@v3
 
-      - name: 🔧 Set Kubernetes context
-        uses: azure/k8s-set-context@v3
-        with:
-          method: kubeconfig
-          kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
+      - name: 🔑 Re-configure kubeconfig
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+          chmod 600 $HOME/.kube/config
+        env:
+          KUBECONFIG: $HOME/.kube/config
 
       - name: ☸️ Déploiement sur Kubernetes
         uses: azure/k8s-deploy@v4
@@ -64,8 +64,11 @@ jobs:
         run: |
           kubectl get pods --namespace default
           kubectl describe pod -l app=portfolio --namespace default
+        env:
+          KUBECONFIG: $HOME/.kube/config
 
       - name: 📜 Voir les logs du pod
         run: |
           kubectl logs -l app=portfolio --namespace default
-
+        env:
+          KUBECONFIG: $HOME/.kube/config

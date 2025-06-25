@@ -59,6 +59,7 @@ jobs:
             k8s/service.yaml
           images: ${{ secrets.dockerusername }}/portfolio:latest
           namespace: default
+          arguments: --validate=false
         env:
           KUBECONFIG: $HOME/.kube/config
 

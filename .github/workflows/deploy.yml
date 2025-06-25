@@ -67,5 +67,5 @@ jobs:
 
       - name: 📜 Voir les logs du pod
         run: |
-        kubectl logs -l app=portfolio --namespace default
+          kubectl logs -l app=portfolio --namespace default
 

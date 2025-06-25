@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      image-tag: ${{ secrets.dockerusername }}/portfolio:latest
     steps:
       - name: 📥 Cloner le repo
         uses: actions/checkout@v3
@@ -30,6 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: 📥 Cloner le repo
+        uses: actions/checkout@v3
+
       - name: 📁 Créer dossier kubeconfig
         run: mkdir -p $HOME/.kube
 
@@ -52,6 +53,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
+      - name: 📥 Cloner le repo
+        uses: actions/checkout@v3
+
       - name: 🔍 Vérifier l’état des pods
         run: |
           kubectl get pods -n default

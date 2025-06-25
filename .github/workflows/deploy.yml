@@ -6,31 +6,29 @@ on:
       - main
 
 jobs:
-  build-image:
+  build-and-push:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Cloner le repo
+      - name: 📥 Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🐳 Connexion à DockerHub
+      - name: 🐳 Login to DockerHub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.dockerusername }}
           password: ${{ secrets.dockerpassword }}
 
-      - name: 🔧 Build de l'image Docker
+      - name: 🔧 Build Docker image
         run: docker build -t ${{ secrets.dockerusername }}/portfolio:latest .
 
-      - name: 📤 Push de l'image vers DockerHub
+      - name: 📤 Push Docker image
         run: docker push ${{ secrets.dockerusername }}/portfolio:latest
 
-  configure-kube:
+  setup-kubeconfig:
     runs-on: ubuntu-latest
-    needs: build-image
-
+    needs: build-and-push
     steps:
-      - name: 🔑 Configure kubeconfig
+      - name: 🔑 Setup kubeconfig file
         run: |
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
@@ -38,15 +36,14 @@ jobs:
         env:
           KUBECONFIG: $HOME/.kube/config
 
-  deploy-to-kubernetes:
+  deploy:
     runs-on: ubuntu-latest
-    needs: configure-kube
-
+    needs: setup-kubeconfig
     steps:
-      - name: 📥 Cloner le repo
+      - name: 📥 Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🔑 Re-configure kubeconfig
+      - name: 🔑 Setup kubeconfig again (for deploy step)
         run: |
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
@@ -54,7 +51,7 @@ jobs:
         env:
           KUBECONFIG: $HOME/.kube/config
 
-      - name: ☸️ Déploiement sur Kubernetes
+      - name: ☸️ Deploy to Kubernetes
         uses: azure/k8s-deploy@v4
         with:
           manifests: |
@@ -65,16 +62,14 @@ jobs:
         env:
           KUBECONFIG: $HOME/.kube/config
 
-      - name: 🔍 Vérifier l’état du pod
+      - name: 🔍 Check pod status
         run: |
           kubectl get pods --namespace default
           kubectl describe pod -l app=portfolio --namespace default
         env:
           KUBECONFIG: $HOME/.kube/config
 
-      - name: 📜 Voir les logs du pod
-        run: |
-          kubectl logs -l app=portfolio --namespace default
+      - name: 📜 Fetch pod logs
+        run: kubectl logs -l app=portfolio --namespace default
         env:
           KUBECONFIG: $HOME/.kube/config
-

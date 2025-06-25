@@ -43,10 +43,10 @@ jobs:
       - name: 📥 Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🔑 Setup kubeconfig again (for deploy step)
+      - name: 🔑 Setup kubeconfig
         run: |
           mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+          echo "${{ secrets.KUBE_CONFIG_DATA }}" > $HOME/.kube/config
           chmod 600 $HOME/.kube/config
         env:
           KUBECONFIG: $HOME/.kube/config

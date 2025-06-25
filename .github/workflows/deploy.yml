@@ -43,14 +43,6 @@ jobs:
       - name: 📥 Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🔑 Setup kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" > $HOME/.kube/config
-          chmod 600 $HOME/.kube/config
-        env:
-          KUBECONFIG: $HOME/.kube/config
-
       - name: ☸️ Deploy manifests with kubectl (validation disabled)
         run: |
           kubectl apply --validate=false -f k8s/deployment.yaml -n default

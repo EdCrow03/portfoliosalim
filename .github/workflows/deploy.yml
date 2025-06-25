@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Étape 1 : Cloner et login Docker
+      - name: 🚀 Étape 1 : Cloner le repo & Connexion DockerHub
+        run: echo "Début de l'étape 1..."
+      
       - name: 📥 Cloner le repo
         uses: actions/checkout@v3
 
@@ -19,12 +23,20 @@ jobs:
           username: ${{ secrets.dockerusername }}
           password: ${{ secrets.dockerpassword }}
 
+      # Étape 2 : Build & push Docker
+      - name: 🚀 Étape 2 : Build & Push Docker
+        run: echo "Début de l'étape 2..."
+      
       - name: 🔧 Build de l'image Docker
         run: docker build -t ${{ secrets.dockerusername }}/portfolio:latest .
 
       - name: 📤 Push de l'image vers DockerHub
         run: docker push ${{ secrets.dockerusername }}/portfolio:latest
 
+      # Étape 3 : Déploiement Kubernetes
+      - name: 🚀 Étape 3 : Déploiement Kubernetes
+        run: echo "Début de l'étape 3..."
+      
       - name: 📁 Créer dossier kubeconfig
         run: mkdir -p $HOME/.kube
 

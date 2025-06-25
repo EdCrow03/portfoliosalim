@@ -45,11 +45,11 @@ jobs:
       - name: 📥 Cloner le repo
         uses: actions/checkout@v3
 
-      - name: 🔑 Reconfigure kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
-          chmod 600 $HOME/.kube/config
+      - name: 🔧 Set Kubernetes context
+        uses: azure/k8s-set-context@v3
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
 
       - name: ☸️ Déploiement sur Kubernetes
         uses: azure/k8s-deploy@v4
@@ -67,4 +67,5 @@ jobs:
 
       - name: 📜 Voir les logs du pod
         run: |
-          kubectl logs -l app=portfolio --namespace default
+        kubectl logs -l app=portfolio --namespace default
+

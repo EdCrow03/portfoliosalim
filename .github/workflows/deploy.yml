@@ -1,66 +1,70 @@
-name: CI/CD Pipeline
+name: Deploy to Ubuntu Server
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-
-  build:
-    name: 🔧 Build Docker Image
-    runs-on: ubuntu-latest
-    steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v3
-
-      - name: 🐳 Set up Docker
-        uses: docker/setup-buildx-action@v3
-
-      - name: 🔨 Build Docker image
-        run: docker build -t portfolio-nginx .
-
-  push:
-    name: 📦 Push Docker Image to Docker Hub
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v3
-
-      - name: 🔐 Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.dockerusername }}
-          password: ${{ secrets.dockerpassword }}
-
-      - name: 📦 Build and Push Docker Image
-        run: |
-          docker build -t ${{ secrets.dockerusername }}/portfolio:latest .
-          docker push ${{ secrets.dockerusername }}/portfolio:latest
-
   deploy:
-    name: 🚀 Deploy to Kubernetes Cluster
     runs-on: ubuntu-latest
-    needs: push
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: 🔐 Set up kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" > $HOME/.kube/config
-          chmod 600 $HOME/.kube/config
+      - name: 📁 Deploy to Ubuntu Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 57.129.5.165
+          username: root
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          script: |
+            # Navigate to the web directory
+            cd /var/www/html
+            
+            # Create a backup of current files (optional)
+            tar -czf backup-$(date +%Y%m%d-%H%M%S).tar.gz . 2>/dev/null || true
+            
+            # Remove old files (keeping hidden files like .htaccess)
+            find . -type f ! -name '.*' -delete
+            find . -type d -empty -delete
+            
+            # Create a temporary directory for new files
+            mkdir -p /tmp/portfolio-deploy
 
-      - name: ☸️ Apply Kubernetes manifests
-        run: |
-          kubectl apply -f k8s/deployment.yaml
-          kubectl apply -f k8s/service.yaml
+      - name: 📤 Upload files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 57.129.5.165
+          username: root
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          source: "."
+          target: "/tmp/portfolio-deploy"
+          strip_components: 0
 
-      - name: 🚀 Set image and rollout
-        run: |
-          kubectl set image deployment/portfolio-deployment portfolio=${{ secrets.dockerusername }}/portfolio:latest
-          kubectl rollout status deployment/portfolio-deployment
+      - name: 🚀 Move files to web directory
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 57.129.5.165
+          username: root
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          script: |
+            # Move new files to web directory
+            cp -r /tmp/portfolio-deploy/* /var/www/html/
+            
+            # Set proper permissions
+            chown -R www-data:www-data /var/www/html
+            chmod -R 755 /var/www/html
+            
+            # Clean up temporary directory
+            rm -rf /tmp/portfolio-deploy
+            
+            # Restart Nginx to ensure changes take effect
+            systemctl reload nginx
+            
+                         echo "✅ Deployment completed successfully!"
+             echo "🌐 Website should be available at: https://ahouadsalim.com"
 
 

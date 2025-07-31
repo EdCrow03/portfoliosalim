@@ -4230,6 +4230,17 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
   height: 100%;
 }
 
+/* Light theme specific styles for certificate cards */
+.light_theme .certifications-section .section-content .cert-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.light_theme .certifications-section .section-content .cert-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
 .certifications-section .section-content .cert-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--card-shadow);
@@ -4245,6 +4256,12 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
   border-radius: 8px;
   padding: 8px;
   overflow: hidden;
+}
+
+/* Light theme specific styles for certificate icon */
+.light_theme .certifications-section .section-content .cert-icon {
+  background-color: rgba(248, 249, 250, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .certifications-section .section-content .cert-icon img {
@@ -4271,6 +4288,19 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
   margin-bottom: 10px;
 }
 
+/* Light theme specific text colors */
+.light_theme .certifications-section .section-content .cert-title {
+  color: #2c3e50;
+}
+
+.light_theme .certifications-section .section-content .cert-date {
+  color: #6c757d;
+}
+
+.light_theme .certifications-section .section-content .cert-issuer {
+  color: #495057;
+}
+
 .certifications-section .section-content .cert-link {
   display: inline-block;
   color: hsl(var(--main-color-one));
@@ -4285,6 +4315,47 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
 .certifications-section .section-content .cert-link:hover {
   color: hsl(var(--bg-color-one));
   background-color: hsl(var(--main-color-one));
+}
+
+/* Light theme specific styles for certificate links */
+.light_theme .certifications-section .section-content .cert-link {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.light_theme .certifications-section .section-content .cert-link:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+/* Light theme specific styles for certificate filters */
+.light_theme .filter-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.light_theme .filter-btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.light_theme .filter-btn.active {
+  background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* Light theme specific styles for show more/less buttons */
+.light_theme .show-more-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.light_theme .show-more-btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  color: white;
 }
 
 .certifications-section .section-content .cert-link:focus {
@@ -4888,6 +4959,17 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
   animation: fadeInUp 0.6s ease-out;
 }
 
+/* Light theme specific styles for highlight items */
+.light_theme .highlight-item {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.light_theme .highlight-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
 .highlight-item:hover {
   transform: translateY(-5px);
   box-shadow: var(--card-shadow);
@@ -4923,6 +5005,15 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
+}
+
+/* Light theme specific text colors for highlights */
+.light_theme .highlight-text h4 {
+  color: #2c3e50;
+}
+
+.light_theme .highlight-text p {
+  color: #6c757d;
 }
 
 /* Responsive Design for Highlights */

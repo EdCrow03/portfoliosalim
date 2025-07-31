@@ -474,35 +474,113 @@
         <!-- start of certifications section -->
         <div id="certifications" class="certifications-section section" tabindex="-1">
           <div class="container">
-            <div class="section-content row">
-              <!-- text box -->
-              <div class="col-lg-6">
-                <div class="text-box-inline">
-                  <span class="subtitle">الشهادات</span>
-                  <h2>الشهادات المهنية</h2>
-                  <p>
-                    التعلم المستمر والتطوير المهني هما جوانب أساسية في رحلتي.
-                    هنا بعض شهاداتي المهمة التي تثبت خبرتي والتزامي بالنمو.
-                  </p>
-                </div>
-              </div>
+            <!-- Title Section -->
+            <div class="section-title">
+              <span class="subtitle">الشهادات</span>
+              <h2 class="title">الشهادات المهنية</h2>
+              <p>
+                التعلم المستمر والتطوير المهني هما جوانب أساسية في رحلتي.
+                هنا بعض شهاداتي المهمة التي تثبت خبرتي والتزامي بالنمو.
+              </p>
+            </div>
 
-              <!-- certificates items -->
-              <div class="certificates-items col-lg-6">
-                <ul class="cert-list" v-staggerdelay="50">
-                  <li class="cert-item" v-for="cert in certificateItems" :key="cert.title">
-                    <div class="cert-card">
-                      <div class="cert-icon">
-                        <img :src="cert.certImage" :alt="cert.title" class="cert-image">
-                      </div>
-                      <div class="cert-details">
-                        <h4 class="cert-title">{{ cert.title }}</h4>
-                        <p class="cert-date">{{ cert.date }}</p>
-                        <a :href="cert.url" target="_blank" class="cert-link link-hover">عرض الشهادة</a>
-                      </div>
+            <!-- Certificates Grid Section -->
+            <div class="certificates-grid">
+              <!-- Filter Buttons -->
+              <div class="certificate-filters">
+                <button @click="filterCertificates('all')" 
+                        :class="['filter-btn', { active: selectedCategory === 'all' }]">
+                  جميع الشهادات
+                </button>
+                <button @click="filterCertificates('web')" 
+                        :class="['filter-btn', { active: selectedCategory === 'web' }]">
+                  تطوير الويب
+                </button>
+                <button @click="filterCertificates('programming')" 
+                        :class="['filter-btn', { active: selectedCategory === 'programming' }]">
+                  لغات البرمجة
+                </button>
+                <button @click="filterCertificates('data')" 
+                        :class="['filter-btn', { active: selectedCategory === 'data' }]">
+                  علوم البيانات والتحليل
+                </button>
+                <button @click="filterCertificates('cloud')" 
+                        :class="['filter-btn', { active: selectedCategory === 'cloud' }]">
+                  الحوسبة السحابية و DevOps
+                </button>
+                <button @click="filterCertificates('ai')" 
+                        :class="['filter-btn', { active: selectedCategory === 'ai' }]">
+                  الذكاء الاصطناعي والتعلم الآلي
+                </button>
+                <button @click="filterCertificates('security')" 
+                        :class="['filter-btn', { active: selectedCategory === 'security' }]">
+                  الأمان والهندسة
+                </button>
+              </div>
+              
+              <ul class="cert-list" v-staggerdelay="50">
+                <li class="cert-item" v-for="cert in filteredCertificates.slice(0, currentCertificatesShown)" :key="cert.title">
+                  <div class="cert-card">
+                    <div class="cert-icon">
+                      <img :src="cert.certImage" :alt="cert.title" class="cert-image">
                     </div>
-                  </li>
-                </ul>
+                    <div class="cert-details">
+                      <h4 class="cert-title">{{ cert.title }}</h4>
+                      <p class="cert-issuer">من {{ cert.issuer }}</p>
+                      <p class="cert-date">{{ cert.date }}</p>
+                      <a :href="cert.url" target="_blank" class="cert-link link-hover">عرض الشهادة</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              
+              <!-- Show More Button -->
+              <div class="show-more-container" v-if="currentCertificatesShown < filteredCertificates.length && filteredCertificates.length > certificatesToShow">
+                <button @click="showMoreCertificates()" class="show-more-btn link-hover">
+                  عرض المزيد من الشهادات ({{ currentCertificatesShown }}/{{ filteredCertificates.length }})
+                </button>
+              </div>
+              
+              <!-- Show Less Button -->
+              <div class="show-more-container" v-if="currentCertificatesShown > certificatesToShow && filteredCertificates.length > certificatesToShow">
+                <button @click="showLessCertificates()" class="show-more-btn link-hover">
+                  عرض أقل
+                </button>
+              </div>
+              
+              <!-- Additional Content for Short Categories -->
+              <div class="certificate-highlights" v-if="filteredCertificates.length <= 3">
+                <div class="highlights-content">
+                  <div class="highlight-item">
+                    <div class="highlight-icon">
+                      <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <div class="highlight-text">
+                      <h4>التعلم المستمر</h4>
+                      <p>ملتزم بالبقاء محدثاً بأحدث التقنيات وأفضل الممارسات في الصناعة من خلال البرامج التعليمية والشهادات المستمرة.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="highlight-item">
+                    <div class="highlight-icon">
+                      <i class="fa fa-certificate"></i>
+                    </div>
+                    <div class="highlight-text">
+                      <h4>التميز المهني</h4>
+                      <p>كل شهادة تمثل مرحلة مهمة في رحلتي المهنية، مما يوضح الخبرة والالتزام بالجودة.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="highlight-item">
+                    <div class="highlight-icon">
+                      <i class="fa fa-rocket"></i>
+                    </div>
+                    <div class="highlight-text">
+                      <h4>تطوير المهارات</h4>
+                      <p>مركز على تطوير المهارات التقنية واللينة لتقديم حلول شاملة تتجاوز التوقعات.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

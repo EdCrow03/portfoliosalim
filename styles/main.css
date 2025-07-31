@@ -4758,3 +4758,303 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
     max-width: 460px;
   }
 }
+
+/* Show More Button Styles */
+.show-more-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.show-more-btn {
+  background: linear-gradient(135deg, hsl(var(--primary-color)), hsl(var(--primary-color) / 0.8));
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.show-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, hsl(var(--primary-color) / 0.9), hsl(var(--primary-color)));
+}
+
+.show-more-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px hsl(var(--primary-color) / 0.3);
+}
+
+.show-more-btn:active {
+  transform: translateY(0);
+}
+
+/* Dark theme adjustments */
+.dark_theme .show-more-btn {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.dark_theme .show-more-btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .show-more-container {
+    margin-top: 30px;
+  }
+  
+  .show-more-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+/* Certificate Filter Buttons */
+.certificate-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+/* Ensure minimum height for certificates section */
+.certifications-section .certificates-grid {
+  min-height: 700px;
+  padding-bottom: 150px;
+}
+
+/* Add extra spacing when there are few certificates */
+.certifications-section .cert-list {
+  min-height: 500px;
+}
+
+/* Ensure the entire certifications section has proper height */
+.certifications-section {
+  min-height: 900px;
+  padding: 100px 0;
+}
+
+/* Add spacing after filter buttons */
+.certificate-filters {
+  margin-bottom: 4rem;
+}
+
+/* Add extra spacing before experience section */
+.certifications-section + .experience-section {
+  margin-top: 80px;
+}
+
+/* Ensure proper spacing when highlights are present */
+.certifications-section:has(.certificate-highlights) + .experience-section {
+  margin-top: 100px;
+}
+
+/* Certificate Highlights Section */
+.certificate-highlights {
+  margin-top: 6rem;
+  padding: 4rem 0;
+  border-top: 1px solid hsla(var(--border-color), 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.highlights-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: hsla(var(--bg-color-one), 0.5);
+  border: 1px solid hsla(var(--border-color), 0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.highlight-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow);
+}
+
+.highlight-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, hsl(var(--primary-color)) 0%, hsl(var(--primary-color) / 0.8) 100%);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px hsl(var(--primary-color) / 0.3);
+}
+
+.highlight-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.highlight-text h4 {
+  color: hsl(var(--t-color-one));
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.highlight-text p {
+  color: hsl(var(--t-color-two));
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design for Highlights */
+@media (max-width: 992px) {
+  .certificate-highlights {
+    margin-top: 4rem;
+    padding: 3rem 0;
+  }
+  
+  .highlights-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .highlight-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .highlight-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-icon i {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate-highlights {
+    margin-top: 3rem;
+    padding: 2.5rem 0;
+  }
+  
+  .highlights-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .highlight-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .highlight-text h4 {
+    font-size: 1.1rem;
+  }
+  
+  .highlight-text p {
+    font-size: 0.9rem;
+  }
+}
+
+.filter-btn {
+  background: linear-gradient(135deg, hsl(var(--primary-color)) 0%, hsl(var(--primary-color) / 0.8) 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px hsl(var(--primary-color) / 0.3);
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px hsl(var(--primary-color) / 0.4);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, hsl(var(--secondary-color)) 0%, hsl(var(--secondary-color) / 0.8) 100%);
+  box-shadow: 0 4px 15px hsl(var(--secondary-color) / 0.3);
+}
+
+.filter-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px hsl(var(--primary-color) / 0.3);
+}
+
+.dark_theme .filter-btn {
+  background: linear-gradient(135deg, hsl(var(--primary-color)) 0%, hsl(var(--primary-color) / 0.9) 100%);
+}
+
+.dark_theme .filter-btn:hover {
+  box-shadow: 0 6px 20px hsl(var(--primary-color) / 0.5);
+}
+
+.dark_theme .filter-btn.active {
+  background: linear-gradient(135deg, hsl(var(--secondary-color)) 0%, hsl(var(--secondary-color) / 0.9) 100%);
+  box-shadow: 0 4px 15px hsl(var(--secondary-color) / 0.4);
+}
+
+@media (max-width: 768px) {
+  .certificate-filters {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .certificate-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* RTL Support for Certificate Filters */
+html[dir=rtl] .certificate-filters {
+  text-align: right;
+}
+
+html[dir=rtl] .filter-btn {
+  font-family: inherit;
+}
+
+/* RTL Support for Highlights */
+html[dir=rtl] .highlight-text {
+  text-align: center;
+}
+
+html[dir=rtl] .highlight-text h4 {
+  font-family: inherit;
+}

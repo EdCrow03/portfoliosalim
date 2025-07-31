@@ -474,8 +474,40 @@
 
             <!-- Certificates Grid Section -->
             <div class="certificates-grid">
+              <!-- Filter Buttons -->
+              <div class="certificate-filters">
+                <button @click="filterCertificates('all')" 
+                        :class="['filter-btn', { active: selectedCategory === 'all' }]">
+                  All Certificates
+                </button>
+                <button @click="filterCertificates('web')" 
+                        :class="['filter-btn', { active: selectedCategory === 'web' }]">
+                  Web Development
+                </button>
+                <button @click="filterCertificates('programming')" 
+                        :class="['filter-btn', { active: selectedCategory === 'programming' }]">
+                  Programming Languages
+                </button>
+                <button @click="filterCertificates('data')" 
+                        :class="['filter-btn', { active: selectedCategory === 'data' }]">
+                  Data Science & Analytics
+                </button>
+                <button @click="filterCertificates('cloud')" 
+                        :class="['filter-btn', { active: selectedCategory === 'cloud' }]">
+                  Cloud & DevOps
+                </button>
+                <button @click="filterCertificates('ai')" 
+                        :class="['filter-btn', { active: selectedCategory === 'ai' }]">
+                  AI & Machine Learning
+                </button>
+                <button @click="filterCertificates('security')" 
+                        :class="['filter-btn', { active: selectedCategory === 'security' }]">
+                  Security & Engineering
+                </button>
+              </div>
+              
               <ul class="cert-list" v-staggerdelay="50">
-                <li class="cert-item" v-for="cert in certificateItems" :key="cert.title">
+                <li class="cert-item" v-for="cert in filteredCertificates.slice(0, currentCertificatesShown)" :key="cert.title">
                   <div class="cert-card">
                     <div class="cert-icon">
                       <img :src="cert.certImage" :alt="cert.title" class="cert-image">
@@ -489,6 +521,55 @@
                   </div>
                 </li>
               </ul>
+              
+              <!-- Show More Button -->
+              <div class="show-more-container" v-if="currentCertificatesShown < filteredCertificates.length && filteredCertificates.length > certificatesToShow">
+                <button @click="showMoreCertificates()" class="show-more-btn link-hover">
+                  Show More Certificates ({{ currentCertificatesShown }}/{{ filteredCertificates.length }})
+                </button>
+              </div>
+              
+              <!-- Show Less Button -->
+              <div class="show-more-container" v-if="currentCertificatesShown > certificatesToShow && filteredCertificates.length > certificatesToShow">
+                <button @click="showLessCertificates()" class="show-more-btn link-hover">
+                  Show Less
+                </button>
+              </div>
+              
+              <!-- Additional Content for Short Categories -->
+              <div class="certificate-highlights" v-if="filteredCertificates.length <= 3">
+                <div class="highlights-content">
+                  <div class="highlight-item">
+                    <div class="highlight-icon">
+                      <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <div class="highlight-text">
+                      <h4>Continuous Learning</h4>
+                      <p>Committed to staying updated with the latest technologies and industry best practices through ongoing education and certification programs.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="highlight-item">
+                    <div class="highlight-icon">
+                      <i class="fa fa-certificate"></i>
+                    </div>
+                    <div class="highlight-text">
+                      <h4>Professional Excellence</h4>
+                      <p>Each certification represents a milestone in my professional journey, demonstrating expertise and dedication to quality.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="highlight-item">
+                    <div class="highlight-icon">
+                      <i class="fa fa-rocket"></i>
+                    </div>
+                    <div class="highlight-text">
+                      <h4>Skill Development</h4>
+                      <p>Focused on developing both technical skills and soft skills to deliver comprehensive solutions that exceed expectations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Salim Ahouad Portfolio" />
+    <meta property="og:description" content="Salim développe les meilleurs sites web de qualité qui servent à long terme. Une interface bien documentée, propre, facile et élégante aide tous les clients non techniques" />
+    <meta property="og:url" content="https://ahouadsalim.com/" />
+    <meta property="og:image" content="assets/images/og-image.png" />
+
+    <!-- title of the browser tab -->
+    <title>Salim Ahouad - Portfolio</title>
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- favicon -->
+    <link rel="icon" href="assets/favicon.png" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- css libraries file -->
+    <link rel="stylesheet" href="styles/libraries.min.css" />
+
+    <!-- bootstrap css file -->
+    <link rel="stylesheet" href="styles/bootstrap.css" />
+
+    <!-- main style file -->
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <!-- preloader -->
+    <div class="preloader">
+      <div class="preloader-content">
+        <div class="logo">
+          <img src="assets/favicon.png" alt="Logo" />
+        </div>
+        <div class="loading-bar">
+          <span class="loading-bar-progress"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- logo -->
+          <div class="logo">
+            <a href="index.html">
+              <img src="assets/images/logo.svg" alt="Salim Ahouad" />
+            </a>
+          </div>
+
+          <!-- navigation menu -->
+          <nav class="nav-menu">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link">À propos</a>
+              </li>
+              <li class="nav-item">
+                <a href="#skills" class="nav-link">Compétences</a>
+              </li>
+              <li class="nav-item">
+                <a href="#certifications" class="nav-link">Certifications</a>
+              </li>
+              <li class="nav-item">
+                <a href="#experience" class="nav-link">Expérience</a>
+              </li>
+              <li class="nav-item">
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a href="#testimonials" class="nav-link">Témoignages</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- language switcher -->
+          <div class="language-switcher">
+            <a href="index.html" class="lang-link">EN</a>
+            <a href="fr-index.html" class="lang-link active">FR</a>
+            <a href="rtl-index.html" class="lang-link">AR</a>
+          </div>
+
+          <!-- mobile menu button -->
+          <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- main content -->
+    <main class="main-content">
+      <!-- hero section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">
+                Salim Ahouad
+                <br />
+                <span class="highlight">Développeur Full Stack</span>
+              </h1>
+              <p class="hero-description">
+                Je développe les meilleurs sites web de qualité qui servent à long terme. 
+                Une interface bien documentée, propre, facile et élégante aide tous les clients non techniques.
+              </p>
+              <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">Voir mes travaux</a>
+                <a href="#contact" class="btn btn-outline">Me contacter</a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img src="assets/images/salim3.png" alt="Salim Ahouad" />
+            </div>
+          </div>
+        </div>
+
+        <!-- social links -->
+        <div class="social">
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/salim_ahouad/" target="_blank" rel="noreferrer">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/SalimAhouad3/" target="_blank" rel="noreferrer">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/salimahouad/" target="_blank" rel="noreferrer">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- scroll down -->
+        <div class="scroll-down">
+          <a href="#about" title="Défiler vers le bas">Défiler</a>
+        </div>
+      </section>
+
+      <!-- statistics section -->
+      <section class="statistics-section section">
+        <div class="container">
+          <div class="section-content">
+            <ul class="statistics-items row">
+              <li class="col-sm-12 col-md-6 col-lg-4">
+                <a href="#experience">
+                  <div class="icon">
+                    <img src="assets/images/icons/emblem.png" alt="Années d'expérience" />
+                  </div>
+                  <div class="text">
+                    <h3>5+</h3>
+                    <strong>Années d'expérience</strong>
+                  </div>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="col-sm-12 col-md-6 col-lg-4">
+                <a href="#portfolio">
+                  <div class="icon">
+                    <img src="assets/images/icons/check-mark.png" alt="Projets terminés" />
+                  </div>
+                  <div class="text">
+                    <h3>405+</h3>
+                    <strong>Commandes terminées</strong>
+                  </div>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="col-sm-12 col-md-6 col-lg-4">
+                <a href="#testimonials">
+                  <div class="icon">
+                    <img src="assets/images/icons/happy.png" alt="Clients satisfaits" />
+                  </div>
+                  <div class="text">
+                    <h3>359+</h3>
+                    <strong>Clients satisfaits</strong>
+                  </div>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- about section -->
+      <section id="about" class="about-section section">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="section-title">À propos de moi</h2>
+              <p class="section-description">
+                Développeur passionné avec une expertise en création de solutions web innovantes
+              </p>
+            </div>
+            <div class="about-content">
+              <div class="about-text">
+                <p>
+                  Salut ! Je suis Salim, un développeur passionné dédié à la création d'applications web propres et intuitives. 
+                  J'aime transformer les idées en réalité à travers des solutions créatives et continuer à élargir mes connaissances 
+                  en nouvelles compétences, outils et technologies. Au-delà du travail sur des projets full-stack en solo, 
+                  j'ai collaboré avec des équipes créatives, participant à des daily stand-ups, une communication efficace, 
+                  le contrôle de source et la gestion de projet.
+                </p>
+                <div class="about-buttons">
+                  <a href="#contact" class="btn btn-primary">M'embaucher</a>
+                  <a download href="resume.pdf" class="btn btn-outline">Télécharger CV</a>
+                </div>
+              </div>
+              <div class="about-image">
+                <img src="assets/images/salim2.png" alt="Salim Ahouad" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- skills section -->
+      <section id="skills" class="skills-section section">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="section-title">Mes Compétences</h2>
+              <p class="section-description">
+                Technologies et outils que j'utilise pour créer des solutions exceptionnelles
+              </p>
+            </div>
+            <div class="skills-grid">
+              <!-- Skills will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- certifications section -->
+      <section id="certifications" class="certifications-section section">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="section-title">Certifications</h2>
+              <p class="section-description">
+                Mes certifications professionnelles et formations continues
+              </p>
+            </div>
+            <div class="certifications-grid">
+              <!-- Certifications will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- experience section -->
+      <section id="experience" class="experience-section section">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="section-title">Mon Expérience</h2>
+              <p class="section-description">
+                5+ années d'expérience dans le développement web et logiciel
+              </p>
+            </div>
+            <div class="experience-content">
+              <div class="experience-text">
+                <p>
+                  Je développe des sites et applications depuis 5 ans et je connais parfaitement 
+                  les principales tendances et directions du design moderne. J'ai été un partenaire 
+                  visionnaire et fiable en ingénierie logicielle pour des marques de classe mondiale. 
+                  Vous obtiendrez un résultat décent comme vous l'attendez.
+                </p>
+              </div>
+              <div class="experience-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-date">2023 - Présent</div>
+                  <div class="timeline-content">
+                    <h3>Développeur Full Stack Senior</h3>
+                    <p>Développement d'applications web complexes et maintenance de systèmes existants</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-date">2021 - 2023</div>
+                  <div class="timeline-content">
+                    <h3>Développeur Web</h3>
+                    <p>Création de sites web responsifs et optimisation des performances</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-date">2019 - 2021</div>
+                  <div class="timeline-content">
+                    <h3>Développeur Junior</h3>
+                    <p>Apprentissage et développement de compétences en programmation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- portfolio section -->
+      <section id="portfolio" class="portfolio-section section">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="section-title">Mon Portfolio</h2>
+              <p class="section-description">
+                Découvrez mes projets qui vont vous émerveiller !
+              </p>
+            </div>
+            <div class="portfolio-filters">
+              <button class="filter-btn active" data-filter="all">Tous</button>
+              <button class="filter-btn" data-filter="web-development">Développement Web</button>
+              <button class="filter-btn" data-filter="software-development">Développement Logiciel</button>
+              <button class="filter-btn" data-filter="javascript-development">Développement JavaScript</button>
+              <button class="filter-btn" data-filter="bot-development">Développement de Bots</button>
+            </div>
+            <div class="portfolio-grid">
+              <!-- Portfolio items will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- testimonials section -->
+      <section id="testimonials" class="testimonials-section section">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="section-title">Témoignages Clients</h2>
+              <p class="section-description">
+                Découvrez ce que mes clients disent de moi
+              </p>
+            </div>
+            <div class="testimonials-grid">
+              <div class="testimonial-item">
+                <div class="testimonial-content">
+                  <p>"Excellent travail ! Salim a livré exactement ce que je demandais et même plus. Communication parfaite et délais respectés."</p>
+                </div>
+                <div class="testimonial-author">
+                  <img src="assets/images/testimonials/anonymous-user.png" alt="Client" />
+                  <div class="author-info">
+                    <h4>Client Satisfait</h4>
+                    <p>Développement Web</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-item">
+                <div class="testimonial-content">
+                  <p>"Professionnel, compétent et très réactif. Je recommande vivement ses services pour tout projet web."</p>
+                </div>
+                <div class="testimonial-author">
+                  <img src="assets/images/testimonials/anonymous-user.png" alt="Client" />
+                  <div class="author-info">
+                    <h4>Entreprise Tech</h4>
+                    <p>Application Web</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-item">
+                <div class="testimonial-content">
+                  <p>"Un développeur exceptionnel qui comprend parfaitement les besoins du client. Résultat final impeccable !"</p>
+                </div>
+                <div class="testimonial-author">
+                  <img src="assets/images/testimonials/anonymous-user.png" alt="Client" />
+                  <div class="author-info">
+                    <h4>Startup Innovante</h4>
+                    <p>Plateforme E-commerce</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact section -->
+      <section id="contact" class="contact-section section">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2 class="section-title">Contactez-moi</h2>
+              <p class="section-description">
+                Prêt à démarrer votre projet ? Parlons-en !
+              </p>
+            </div>
+            <div class="contact-content">
+              <div class="contact-info">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h3>Email</h3>
+                    <p>contact@ahouadsalim.com</p>
+                    <p>ahouadsalim@gmail.com</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h3>Téléphone</h3>
+                    <p>(212) 6 25 87 14 13</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h3>Adresse</h3>
+                    <p>Rabat, Maroc</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-form">
+                <form id="contactForm" action="contact_form.php" method="POST">
+                  <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" name="name" placeholder="Votre nom" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Votre email" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Téléphone <span class="optional">(Optionnel)</span></label>
+                    <input type="tel" name="phone" placeholder="Votre numéro de téléphone" />
+                  </div>
+                  <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6Lev8f0qAAAAAK12ZOmS1M69Ab40VV4lDOY53ckn"></div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h3>Salim Ahouad</h3>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/salim_ahouad/" target="_blank" rel="noreferrer">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/SalimAhouad3/" target="_blank" rel="noreferrer">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/salimahouad/" target="_blank" rel="noreferrer">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-copyright">
+            <p>&copy; 2025 Salim Ahouad. Tous droits réservés.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- scroll to top button -->
+    <button class="scroll-to-top" id="scrollToTop" title="Retour en haut">
+      <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- scripts -->
+    <script src="scripts/plugins.min.js"></script>
+    <script src="scripts/main.min.js"></script>
+  </body>
+</html> 

@@ -4345,18 +4345,7 @@ html[dir=rtl] .portfolio-page .portfolio-items .work-tools li:not(:last-of-type)
   box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
-/* Light theme specific styles for show more/less buttons */
-.light_theme .show-more-btn {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-}
 
-.light_theme .show-more-btn:hover {
-  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-  color: white;
-}
 
 .certifications-section .section-content .cert-link:focus {
   outline: none;

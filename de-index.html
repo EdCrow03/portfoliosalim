@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="de" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="Salim Ahouad Portfolio" />
-    <meta property="og:description" content="Salim développe les meilleurs sites web de qualité qui servent à long terme. Une interface bien documentée, propre, facile et élégante aide tous les clients non techniques" />
+    <meta property="og:description" content="Salim entwickelt Websites von bester Qualität, die langfristig dienen. Gut dokumentierte, saubere, einfache und elegante Benutzeroberflächen helfen jedem nicht-technischen Kunden" />
     <meta property="og:url" content="https://ahouadsalim.com/" />
     <meta property="og:image" content="assets/images/og-image.png" />
 
@@ -76,7 +76,7 @@
           <div class="container">
             <!-- logo -->
             <div class="logo" title="Salim Ahouad">
-              <h1><a href="fr-index.html">Salim Ahouad</a></h1>
+              <h1><a href="de-index.html">Salim Ahouad</a></h1>
             </div>
 
             <!-- nav links -->
@@ -85,7 +85,7 @@
               <ul class="nav-links">
                 <li v-for="link in navLinks" :key="link.url">
                   <a :href="link.url" @click="closeNavMenu">
-                    {{ link.title.fr }}
+                    {{ link.title.de }}
                   </a>
                 </li>
               </ul>
@@ -96,20 +96,19 @@
                   <!-- about us -->
                   <div class="about-us">
                     <p>
-                      J'aime rendre les choses simples, intuitives et expertement
-                      conçues !
+                      Ich liebe es, Dinge einfach, intuitiv und fachmännisch
+                      herzustellen!
                     </p>
                     <h4 class="block-title">
-                      Le produit est l'essence vitale de ce que je fais, un véritable grand
-                      produit naît d'une planification et d'un processus méticuleux. C'est
-                      là que je me spécialise !
+                      Produkt ist die lebenswichtige Essenz dessen, was ich tue, wirklich großartige
+                      Produkte entstehen durch sorgfältige Planung und Prozesse. Hier bin ich spezialisiert!
                     </h4>
                   </div>
 
                   <!-- contact info -->
                   <ul class="contact-info row">
                     <li class="col-lg-4">
-                      <h4 class="block-title">Email</h4>
+                      <h4 class="block-title">E-Mail</h4>
                       <ul>
                         <li>
                           <a href="mailto:contact@ahouadsalim.com">contact@ahouadsalim.com</a>
@@ -125,12 +124,12 @@
                       <h4 class="block-title">Adresse</h4>
                       <ul>
                         <li>
-                          Rabat, Maroc
+                          Rabat, Marokko
                         </li>
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Téléphone</h4>
+                      <h4 class="block-title">Telefon</h4>
                       <ul>
                         <li><a href="tel:0625871413">(212) 6 25 87 14 13</a></li>
                       </ul>
@@ -146,7 +145,7 @@
               <li class="lang-switcher">
                 <ul class="lang-switcher-menu">
                   <li class="menu-item menu-item-has-children">
-                    <a href="#">Fr</a>
+                    <a href="#">De</a>
 
                     <ul class="sub-menu">
                       <li class="menu-item">
@@ -156,7 +155,7 @@
                         <a href="fr-index.html">Fr</a>
                       </li>
                       <li class="menu-item">
-                        <a href="de-index.html">Deutsch</a>
+                        <a href="de-index.html">De</a>
                       </li>
                       <li class="menu-item">
                         <a href="rtl-index.html">ع</a>
@@ -170,7 +169,7 @@
               <li class="theme-switcher">
                 <button
                   :class="savedTheme"
-                  title="Changer le Mode"
+                  title="Modus ändern"
                   @click="changeAppTheme"
                 ></button>
               </li>
@@ -179,8 +178,8 @@
               <li class="hamburger-btn" :class="{'open': isNavMenuOpen}">
                 <button
                   @click="toggleNavMenu"
-                  title="Basculer le Menu Latéral"
-                  aria-label="Basculer le Menu Latéral"
+                  title="Seitenmenü umschalten"
+                  aria-label="Seitenmenü umschalten"
                   ref="navMenuToggleBtn"
                 >
                   <span></span>
@@ -208,11 +207,11 @@
 
           <div class="hero-text">
             <h2>
-              Je Conçois & Développe
+              Ich entwerfe & baue
               <br />
-              des Produits Créatifs
+              kreative Produkte
             </h2>
-            <a href="#contact" class="btn">Me Contacter</a>
+            <a href="#contact" class="btn">Kontakt aufnehmen</a>
           </div>
 
           <div class="social">
@@ -251,7 +250,7 @@
           </div>
 
           <div class="scroll-down">
-            <a href="#about" title="Défiler vers le bas">Défiler</a>
+            <a href="#about" title="Nach unten scrollen">Scrollen</a>
           </div>
         </div>
         <!-- end of hero section -->
@@ -266,12 +265,12 @@
                     <div class="icon">
                       <img
                         src="assets/images/icons/emblem.png"
-                        alt="Années d'Expérience"
+                        alt="Jahre Erfahrung"
                       />
                     </div>
                     <div class="text">
                       <h3>{{ experienceYears }}+</h3>
-                      <strong>Années d'Expérience</strong>
+                      <strong>Jahre Erfahrung</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -281,12 +280,12 @@
                     <div class="icon">
                       <img
                         src="assets/images/icons/check-mark.png"
-                        alt="Projets Terminés"
+                        alt="Abgeschlossene Projekte"
                       />
                     </div>
                     <div class="text">
                       <h3>405+</h3>
-                      <strong>Commandes Terminées</strong>
+                      <strong>Abgeschlossene Aufträge</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -296,12 +295,12 @@
                     <div class="icon">
                       <img
                         src="assets/images/icons/happy.png"
-                        alt="Clients Satisfaits"
+                        alt="Zufriedene Kunden"
                       />
                     </div>
                     <div class="text">
                       <h3>359+</h3>
-                      <strong>Clients Satisfaits</strong>
+                      <strong>Zufriedene Kunden</strong>
                     </div>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                   </a>
@@ -331,23 +330,23 @@
               <!-- text box -->
               <div class="about-text col-lg-6">
                 <div class="text-box-inline">
-                  <span class="subtitle">à propos de moi</span>
+                  <span class="subtitle">über mich</span>
                   <h2>
-                    Besoin d'un Produit Créatif ?
+                    Brauchen Sie ein kreatives Produkt?
                     <br />
-                    Je Peux Vous Aider !
+                    Ich kann Ihnen helfen!
                   </h2>
                   <p>
-                    Salut ! Je suis Salim, un développeur passionné dédié à la création d'applications web propres 
-                    et intuitives. J'aime transformer les idées en réalité à travers des solutions créatives 
-                    et continuer à élargir mes connaissances en nouvelles compétences, outils et technologies. 
-                    Au-delà du travail sur des projets full-stack en solo, j'ai collaboré avec des équipes créatives, 
-                    participant à des daily stand-ups, une communication efficace, le contrôle de source et la gestion de projet.
+                    Hallo! Ich bin Salim, ein leidenschaftlicher Entwickler, der sich darauf konzentriert, saubere 
+                    und intuitive Webanwendungen zu erstellen. Ich liebe es, Ideen durch kreative Lösungen in die Realität 
+                    umzusetzen und erweitere kontinuierlich mein Wissen über neue Fähigkeiten, Tools und Technologien. 
+                    Neben der Arbeit an Solo-Full-Stack-Projekten habe ich mit kreativen Teams zusammengearbeitet und 
+                    mich an täglichen Stand-ups, effektiver Kommunikation, Quellcodeverwaltung und Projektmanagement beteiligt.
                   </p>
                   <div class="btns-container">
-                    <a href="#contact" class="btn btn-primary">M'Embaucher</a>
+                    <a href="#contact" class="btn btn-primary">Mich einstellen</a>
                     <a download href="resume.pdf" class="btn btn-outline-light"
-                      >Télécharger CV</a
+                      >Lebenslauf herunterladen</a
                     >
                   </div>
                 </div>
@@ -364,16 +363,16 @@
               <!-- text box -->
               <div class="skills-text col-lg-6">
                 <div class="text-box-inline">
-                  <span class="subtitle">mes compétences</span>
+                  <span class="subtitle">meine fähigkeiten</span>
                   <h2>
-                    Quelles Sont Mes Compétences
+                    Was sind meine Programmier-
                     <br />
-                    de Programmation ?
+                    fähigkeiten?
                   </h2>
                   <p>
-                    Je développe des interfaces utilisateur simples, intuitives et responsives
-                    qui aident les utilisateurs à accomplir leurs tâches avec moins d'effort et de temps
-                    avec ces technologies.
+                    Ich entwickle einfache, intuitive und responsive Benutzeroberflächen,
+                    die Benutzern helfen, Dinge mit weniger Aufwand und Zeit zu erledigen
+                    mit diesen Technologien.
                   </p>
                   <div ref="skillsSwitchBtn" class="toggle-switch-btn">
                     <!-- Skills Option -->
@@ -384,7 +383,7 @@
                       v-model="skillsType"
                       checked
                     />
-                    <label for="skills-list" class="link-hover">Compétences</label>
+                    <label for="skills-list" class="link-hover">Fähigkeiten</label>
                     
                     <!-- Tools Option -->
                     <input
@@ -393,7 +392,7 @@
                       value="tools"
                       v-model="skillsType"
                     />
-                    <label for="tools-list" class="link-hover">Outils</label>
+                    <label for="tools-list" class="link-hover">Tools</label>
                     
                     <!-- Cloud Option -->
                     <input
@@ -469,11 +468,11 @@
           <div class="container">
             <!-- Title Section -->
             <div class="section-title">
-              <span class="subtitle">certifications</span>
-              <h2 class="title">Certifications Professionnelles</h2>
+              <span class="subtitle">zertifizierungen</span>
+              <h2 class="title">Professionelle Zertifizierungen</h2>
               <p>
-                L'apprentissage continu et le développement professionnel sont des aspects clés de mon parcours.
-                Voici quelques-unes de mes certifications notables qui démontrent mon expertise et mon engagement envers la croissance.
+                Kontinuierliches Lernen und berufliche Entwicklung sind Schlüsselaspekte meiner Reise.
+                Hier sind einige meiner bemerkenswerten Zertifizierungen, die meine Expertise und mein Engagement für Wachstum demonstrieren.
               </p>
             </div>
 
@@ -483,19 +482,19 @@
               <div class="certificate-filters">
                 <button @click="filterCertificates('all')" 
                         :class="['filter-btn', { active: selectedCategory === 'all' }]">
-                  Toutes les Certifications
+                  Alle Zertifikate
                 </button>
                 <button @click="filterCertificates('web')" 
                         :class="['filter-btn', { active: selectedCategory === 'web' }]">
-                  Développement Web
+                  Webentwicklung
                 </button>
                 <button @click="filterCertificates('programming')" 
                         :class="['filter-btn', { active: selectedCategory === 'programming' }]">
-                  Langages de Programmation
+                  Programmiersprachen
                 </button>
                 <button @click="filterCertificates('data')" 
                         :class="['filter-btn', { active: selectedCategory === 'data' }]">
-                  Science des Données & Analytique
+                  Datenwissenschaft & Analytics
                 </button>
                 <button @click="filterCertificates('cloud')" 
                         :class="['filter-btn', { active: selectedCategory === 'cloud' }]">
@@ -503,11 +502,11 @@
                 </button>
                 <button @click="filterCertificates('ai')" 
                         :class="['filter-btn', { active: selectedCategory === 'ai' }]">
-                  IA & Machine Learning
+                  KI & Machine Learning
                 </button>
                 <button @click="filterCertificates('security')" 
                         :class="['filter-btn', { active: selectedCategory === 'security' }]">
-                  Sécurité & Ingénierie
+                  Sicherheit & Engineering
                 </button>
               </div>
               
@@ -519,9 +518,9 @@
                     </div>
                     <div class="cert-details">
                       <h4 class="cert-title">{{ cert.title }}</h4>
-                      <p class="cert-issuer">par {{ cert.issuer }}</p>
+                      <p class="cert-issuer">von {{ cert.issuer }}</p>
                       <p class="cert-date">{{ cert.date }}</p>
-                      <a :href="cert.url" target="_blank" class="cert-link link-hover">Voir la Certification</a>
+                      <a :href="cert.url" target="_blank" class="cert-link link-hover">Zertifikat anzeigen</a>
                     </div>
                   </div>
                 </li>
@@ -530,14 +529,14 @@
               <!-- Show More Button -->
               <div class="show-more-container" v-if="currentCertificatesShown < filteredCertificates.length && filteredCertificates.length > certificatesToShow">
                 <button @click="showMoreCertificates()" class="show-more-btn link-hover">
-                  Afficher Plus de Certifications ({{ currentCertificatesShown }}/{{ filteredCertificates.length }})
+                  Mehr Zertifikate anzeigen ({{ currentCertificatesShown }}/{{ filteredCertificates.length }})
                 </button>
               </div>
               
               <!-- Show Less Button -->
               <div class="show-more-container" v-if="currentCertificatesShown > certificatesToShow && filteredCertificates.length > certificatesToShow">
                 <button @click="showLessCertificates()" class="show-more-btn link-hover">
-                  Afficher Moins
+                  Weniger anzeigen
                 </button>
               </div>
               
@@ -549,8 +548,8 @@
                       <i class="fa fa-graduation-cap"></i>
                     </div>
                     <div class="highlight-text">
-                      <h4>Apprentissage Continu</h4>
-                      <p>Engagé à rester à jour avec les dernières technologies et les meilleures pratiques de l'industrie grâce à des programmes d'éducation et de certification continus.</p>
+                      <h4>Kontinuierliches Lernen</h4>
+                      <p>Verpflichtet, durch laufende Bildung und Zertifizierungsprogramme mit den neuesten Technologien und Branchenbest Practices auf dem Laufenden zu bleiben.</p>
                     </div>
                   </div>
                   
@@ -559,8 +558,8 @@
                       <i class="fa fa-certificate"></i>
                     </div>
                     <div class="highlight-text">
-                      <h4>Excellence Professionnelle</h4>
-                      <p>Chaque certification représente une étape importante de mon parcours professionnel, démontrant expertise et dévouement à la qualité.</p>
+                      <h4>Professionelle Exzellenz</h4>
+                      <p>Jede Zertifizierung repräsentiert einen Meilenstein in meiner beruflichen Reise und demonstriert Expertise und Engagement für Qualität.</p>
                     </div>
                   </div>
                   
@@ -569,8 +568,8 @@
                       <i class="fa fa-rocket"></i>
                     </div>
                     <div class="highlight-text">
-                      <h4>Développement des Compétences</h4>
-                      <p>Concentré sur le développement des compétences techniques et des compétences douces pour livrer des solutions complètes qui dépassent les attentes.</p>
+                      <h4>Fähigkeitsentwicklung</h4>
+                      <p>Fokussiert auf die Entwicklung sowohl technischer als auch sozialer Fähigkeiten, um umfassende Lösungen zu liefern, die Erwartungen übertreffen.</p>
                     </div>
                   </div>
                 </div>
@@ -605,10 +604,10 @@
                         <h3>{{ item.date }}</h3>
                         <div class="ultimate-tooltip">
                           <h4 class="ultimate-tooltip-title">
-                            {{ item.companyName.fr }}
+                            {{ item.companyName.de }}
                           </h4>
                           <h5 class="ultimate-tooltip-subtitle">
-                            {{ item.jobTitle.fr }}
+                            {{ item.jobTitle.de }}
                           </h5>
                         </div>
                         <div class="ultimate-tooltip-arrow"></div>
@@ -621,14 +620,13 @@
               <!-- text box -->
               <div class="experience-text col-lg-6">
                 <div class="text-box-inline">
-                  <span class="subtitle">expérience</span>
-                  <h2>{{ experienceYears }}+ Années d'Expérience</h2>
+                  <span class="subtitle">erfahrung</span>
+                  <h2>{{ experienceYears }}+ Jahre Erfahrung</h2>
                   <p>
-                    Je développe des sites et applications depuis {{ experienceYears
-                    }} ans et je connais parfaitement les principales tendances et directions
-                    du design moderne, j'ai été un partenaire visionnaire et fiable
-                    en ingénierie logicielle pour des marques de classe mondiale. Vous
-                    obtiendrez un résultat décent comme vous l'attendez.
+                    Ich entwickle seit {{ experienceYears }} Jahren Websites und Apps und kenne sicher die wichtigsten Trends und Richtungen
+                    des modernen Designs. Ich war ein visionärer und zuverlässiger
+                    Software-Engineering-Partner für Weltklasse-Marken. Sie
+                    werden ein anständiges Ergebnis bekommen, wie Sie es erwarten.
                   </p>
                 </div>
               </div>
@@ -645,20 +643,21 @@
               <ul
                 class="portfolio-items has-works"
                 ref="portfolioItems"
-                data-no-works-msg="Aucun travail à charger"
+                data-no-works-msg="Keine Arbeiten zum Laden"
               >
                 <li>
                   <!-- text box -->
                   <div class="text-box-inline">
-                    <span class="subtitle">mes travaux</span>
+                    <span class="subtitle">meine arbeiten</span>
                     <h2>
-                      Découvrez Mes Travaux Qui
+                      Sehen Sie meine Arbeiten, die
                       <br />
-                      Vont Vous Émerveiller !
+                      Sie erstaunen werden!
                     </h2>
                     <p>
-                      Je développe les meilleurs sites web de qualité qui servent à long terme.
-                      Une interface bien documentée, propre, facile et élégante aide tous les clients non techniques.
+                      Ich entwickle Websites von bester Qualität, die langfristig dienen.
+                      Gut dokumentierte, saubere, einfache und elegante Benutzeroberflächen
+                      helfen jedem nicht-technischen Kunden.
                     </p>
                     <ul class="works-filter">
                       <li v-for="filter in filters" :key="filter">
@@ -677,15 +676,15 @@
                 <li
                   class="portfolio-item"
                   v-for="work in filteredPortfolioItems"
-                  :key="work.title.fr"
+                  :key="work.title.de"
                 >
-                  <a :href="'fr-' + work.url" rel="noopener">
+                  <a :href="de-' + work.url" rel="noopener">
                     <div class="item-img">
-                      <img :src="work.imgUrl" :alt="work.title.fr" />
+                      <img :src="work.imgUrl" :alt="work.title.de" />
                     </div>
                     <div class="item-details">
-                      <h3 class="title">{{ work.title.fr }}</h3>
-                      <div class="date">{{ work.date.fr }}</div>
+                      <h3 class="title">{{ work.title.de }}</h3>
+                      <div class="date">{{ work.date.de }}</div>
                     </div>
                   </a>
                 </li>
@@ -693,7 +692,7 @@
 
                 <li>
                   <button class="more" @click="getPortfolioItems">
-                    Charger plus de travaux
+                    Mehr Arbeiten laden
                   </button>
                 </li>
               </ul>
@@ -711,15 +710,15 @@
         >
           <div class="container">
             <div class="section-title">
-              <span class="subtitle">témoignages</span>
+              <span class="subtitle">bewertungen</span>
               <h2 class="title">
-                Découvrez Ce Que Mes Clients
+                Schauen Sie, was meine Kunden
                 <br />
-                Disent de Moi
+                über mich sagen
               </h2>
               <p>
-                J'ai inclus environ 20 avis ici. Pour consulter le reste des avis, 
-                n'hésitez pas à visiter mon profil sur <a href="https://www.fiverr.com/edcrow03" target="_blank" rel="noopener noreferrer"><strong>Fiverr</strong></a>.
+                Ich habe hier etwa 20 Bewertungen aufgenommen. Um den Rest der Bewertungen zu überprüfen, 
+                besuchen Sie gerne mein Profil auf <a href="https://www.fiverr.com/edcrow03" target="_blank" rel="noopener noreferrer"><strong>Fiverr</strong></a>.
               </p>
             </div>
           </div>
@@ -730,22 +729,22 @@
                 class="has-ultimate-tooltip"
                 tabindex="0"
                 v-for="item in testimonialsItems"
-                :key="item.quoteAuthor.fr"
+                :key="item.quoteAuthor.de"
               >
                 <div class="testimonials-item">
                   <div class="testimonial-author-img">
                     <img
                       :src="item.imgUrl || 'assets/images/testimonials/anonymous-user.png'"
-                      :alt="item.quoteAuthor.fr"
+                      :alt="item.quoteAuthor.de"
                     />
                   </div>
                   <div class="ultimate-tooltip">
-                    {{ item.quoteContent.fr }}</p>
+                    {{ item.quoteContent.de }}</p>
                     <h4 class="ultimate-tooltip-title">
-                      {{ item.quoteAuthor.fr }}
+                      {{ item.quoteAuthor.de }}
                     </h4>
                     <h5 class="ultimate-tooltip-subtitle">
-                      {{ item.jobTitle.fr }}
+                      {{ item.jobTitle.de }}
                     </h5>
                   </div>
                   <div class="ultimate-tooltip-arrow"></div>
@@ -763,15 +762,15 @@
               <!-- text box -->
               <div class="contact-text col-lg-6">
                 <div class="text-box-inline">
-                  <span class="subtitle">contact</span>
+                  <span class="subtitle">kontakt</span>
                   <h2>
-                    Vous Avez un Projet ?
+                    Haben Sie ein Projekt?
                     <br />
-                    Laissez-moi un Message
+                    Hinterlassen Sie eine Nachricht
                   </h2>
                   <p>
-                    Contactez-moi et faites-moi savoir comment je peux vous aider. Remplissez le
-                    formulaire et je vous répondrai dès que possible.
+                    Nehmen Sie Kontakt auf und lassen Sie mich wissen, wie ich helfen kann. Füllen Sie das
+                    Formular aus und ich werde mich so schnell wie möglich bei Ihnen melden.
                   </p>
                 </div>
 
@@ -780,14 +779,14 @@
                   <li>
                     <img src="assets/images/icons/address.png" alt="Adresse" />
                     <div>
-                      <strong>Adresse :</strong>
-                      Rabat, Maroc
+                      <strong>Adresse:</strong>
+                      Rabat, Marokko
                     </div>
                   </li>
                   <li>
-                    <img src="assets/images/icons/phone.png" alt="Téléphone" />
+                    <img src="assets/images/icons/phone.png" alt="Telefon" />
                     <div>
-                      <strong>Téléphone :</strong>
+                      <strong>Telefon:</strong>
                       <ul>
                         <li>
                           <a href="tel:0625871413" class="ltr-dir"
@@ -798,9 +797,9 @@
                     </div>
                   </li>
                   <li>
-                    <img src="assets/images/icons/email.png" alt="Email" />
+                    <img src="assets/images/icons/email.png" alt="E-Mail" />
                     <div>
-                      <strong>Email :</strong>
+                      <strong>E-Mail:</strong>
                       <ul>
                         <li>
                           <a href="mailto:contact@ahouadsalim.com"
@@ -858,17 +857,17 @@
                   ref="contactForm"
                   class="contact-form form-styled"
                   action="contact_form.php"
-                  data-success-msg="Message envoyé avec succès !"
-                  data-err-msg="Oups ! quelque chose s'est mal passé, veuillez réessayer."
-                  data-err-recaptcha-msg="Recaptcha invalide, veuillez réessayer."
+                  data-success-msg="Nachricht erfolgreich gesendet!"
+                  data-err-msg="Hoppla! etwas ist schief gelaufen, bitte versuchen Sie es erneut."
+                  data-err-recaptcha-msg="Ungültiges Recaptcha, bitte versuchen Sie es erneut."
                 >
                   <div class="group">
-                    <label>Nom</label>
+                    <label>Name</label>
                     <div class="control has-prefix-icon">
                       <input
                         type="text"
                         name="name"
-                        placeholder="ex. Jean Dupont"
+                        placeholder="z.B. Max Mustermann"
                         minlength="3"
                         required
                       />
@@ -882,25 +881,25 @@
                         <input
                           class="required"
                           type="hidden"
-                          value="Le nom est requis"
+                          value="Name ist erforderlich"
                         />
                         <input
                           class="minLength"
                           type="hidden"
-                          value="Le nom doit contenir au moins 3 caractères"
+                          value="Name muss mindestens 3 Zeichen lang sein"
                         />
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>Email</label>
+                    <label>E-Mail</label>
                     <div class="control has-prefix-icon">
                       <input
                         class="ltr-dir"
                         type="email"
                         inputmode="email"
                         name="email"
-                        placeholder="ex. jean.dupont@gmail.com"
+                        placeholder="z.B. max.mustermann@gmail.com"
                         required
                       />
                       <i
@@ -913,26 +912,26 @@
                         <input
                           class="required"
                           type="hidden"
-                          value="L'email est requis"
+                          value="E-Mail ist erforderlich"
                         />
                         <input
                           class="invalid"
                           type="hidden"
-                          value="Veuillez entrer une adresse email valide"
+                          value="Bitte geben Sie eine gültige E-Mail-Adresse ein"
                         />
                       </div>
                     </div>
                   </div>
                   <div class="group phone-number">
                     <label
-                      >Téléphone <span class="optional">(Optionnel)</span></label
+                      >Telefon <span class="optional">(Optional)</span></label
                     >
                     <div class="control has-prefix-icon">
                       <input
                         type="tel"
                         inputmode="tel"
                         name="phone"
-                        placeholder="Numéro de téléphone"
+                        placeholder="Telefonnummer"
                       />
                       <i class="fa fa-phone prefix-icon" aria-hidden="true"></i>
 
@@ -941,17 +940,17 @@
                         <input
                           class="invalid"
                           type="hidden"
-                          value="Veuillez entrer un numéro de téléphone valide"
+                          value="Bitte geben Sie eine gültige Telefonnummer ein"
                         />
                       </div>
                     </div>
                   </div>
                   <div class="group">
-                    <label>Message</label>
+                    <label>Nachricht</label>
                     <div class="control has-prefix-icon">
                       <textarea
                         name="message"
-                        placeholder="Écrire un message..."
+                        placeholder="Nachricht schreiben..."
                         required
                       ></textarea>
                       <i
@@ -964,7 +963,7 @@
                         <input
                           class="required"
                           type="hidden"
-                          value="Le message est requis"
+                          value="Nachricht ist erforderlich"
                         />
                       </div>
                     </div>
@@ -984,7 +983,7 @@
                         type="button"
                         @click="contactFormValidation"
                       >
-                        Envoyer
+                        Senden
                       </button>
                     </div>
                   </div>
@@ -1001,11 +1000,11 @@
               <div class="col-lg-6">
                 <!-- logo -->
                 <div class="logo" title="Salim">
-                  <h1><a href="fr-index.html">Salim Ahouad</a></h1>
+                  <h1><a href="de-index.html">Salim Ahouad</a></h1>
                 </div>
               </div>
               <div class="col-lg-6">
-                &copy; {{ copyrightDate }} Fièrement Propulsé par
+                &copy; {{ copyrightDate }} Stolz angetrieben von
                 <a
                   href="https://www.linkedin.com/in/salimahouad/"
                   target="_blank"
@@ -1022,7 +1021,7 @@
         <button
           class="scroll-to-top"
           ref="scrollTopBtn"
-          title="Retour en Haut"
+          title="Nach oben"
           data-show-at="50"
           @click="scrollToTop"
         >
@@ -1068,4 +1067,4 @@
     <!-- main script file -->
     <script src="scripts/main.min.js"></script>
   </body>
-</html> 
+</html>

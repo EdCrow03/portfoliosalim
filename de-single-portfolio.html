@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="de" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="MimoudiX develops the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients."
+      content="MimoudiX entwickelt Websites von bester Qualität, die langfristig dienen. Gut dokumentierte, saubere, einfache und elegante Benutzeroberflächen helfen jedem nicht-technischen Kunden."
     />
     <meta
       name="keywords"
@@ -79,7 +79,7 @@
           <div class="container">
             <!-- logo -->
             <div class="logo" title="Salim">
-              <h1><a href="index.html">Salim Ahouad</a></h1>
+              <h1><a href="de-index.html">Salim Ahouad</a></h1>
             </div>
 
             <!-- nav links -->
@@ -88,7 +88,7 @@
               <ul class="nav-links">
                 <li v-for="link in navLinks" :key="link.url">
                   <a :href="link.url" @click="closeNavMenu">
-                    {{ link.title.en }}
+                    {{ link.title.de }}
                   </a>
                 </li>
               </ul>
@@ -99,20 +99,19 @@
                   <!-- about us -->
                   <div class="about-us">
                     <p>
-                      I love making things simple, intuitive and expertly
-                      crafted!
+                      Ich liebe es, Dinge einfach, intuitiv und fachmännisch
+                      herzustellen!
                     </p>
                     <h4 class="block-title">
-                      Product is the vital essence of what i do, truly great
-                      product is born of meticulous planning and process. This
-                      is where i specialized!
+                      Produkt ist die lebenswichtige Essenz dessen, was ich tue, wirklich großartige
+                      Produkte entstehen durch sorgfältige Planung und Prozesse. Hier bin ich spezialisiert!
                     </h4>
                   </div>
 
                   <!-- contact info -->
                   <ul class="contact-info row">
                     <li class="col-lg-4">
-                      <h4 class="block-title">Email</h4>
+                      <h4 class="block-title">E-Mail</h4>
                       <ul>
                         <li>
                           <a href="mailto:contact@salimahouad.com"
@@ -127,13 +126,13 @@
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Address</h4>
+                      <h4 class="block-title">Adresse</h4>
                       <ul>
-                        <li>Rabat, Morocco</li>
+                        <li>Rabat, Marokko</li>
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Phone</h4>
+                      <h4 class="block-title">Telefon</h4>
                       <ul>
                         <li>
                           <a href="tel:0693278379">(212) 6 89 23 13 11</a>
@@ -151,7 +150,7 @@
               <li class="lang-switcher">
                 <ul class="lang-switcher-menu">
                   <li class="menu-item menu-item-has-children">
-                    <a href="#">En</a>
+                    <a href="#">De</a>
 
                     <ul class="sub-menu">
                       <li class="menu-item">
@@ -161,7 +160,7 @@
                         <a href="fr-index.html">Fr</a>
                       </li>
                       <li class="menu-item">
-                        <a href="de-index.html">Deutsch</a>
+                        <a href="de-index.html">De</a>
                       </li>
                       <li class="menu-item">
                         <a href="rtl-index.html">ع</a>
@@ -175,7 +174,7 @@
               <li class="theme-switcher">
                 <button
                   :class="savedTheme"
-                  title="Change Mode"
+                  title="Modus ändern"
                   @click="changeAppTheme"
                 ></button>
               </li>
@@ -184,8 +183,8 @@
               <li class="hamburger-btn" :class="{'open': isNavMenuOpen}">
                 <button
                   @click="toggleNavMenu"
-                  title="Toggle Side Menu"
-                  aria-label="Toggle Side Menu"
+                  title="Seitenmenü umschalten"
+                  aria-label="Seitenmenü umschalten"
                   ref="navMenuToggleBtn"
                 >
                   <span></span>
@@ -210,8 +209,8 @@
                     <span class="subtitle">
                       <a>{{ getSinglePortfolioItem.category }}</a>
                     </span>
-                    <h2>{{ getSinglePortfolioItem.title.en }}</h2>
-                    <p>{{ getSinglePortfolioItem.desc.en }}</p>
+                    <h2>{{ getSinglePortfolioItem.title.de }}</h2>
+                    <p>{{ getSinglePortfolioItem.desc.de }}</p>
                     <ul class="work-tools">
                       <li
                         v-for="tool in getSinglePortfolioItem.tools"
@@ -227,7 +226,7 @@
                 <li
                   class="portfolio-item"
                   v-for="screenshot in getSinglePortfolioItem.screenshots"
-                  :key="screenshot.caption.en"
+                  :key="screenshot.caption.de"
                 >
                   <!-- href points to the fully sized image -->
                   <a
@@ -239,10 +238,10 @@
                   >
                     <div class="item-img">
                       <!-- thumbnails -->
-                      <img :src="screenshot.url" :alt="screenshot.caption.en" />
+                      <img :src="screenshot.url" :alt="screenshot.caption.de" />
                     </div>
                     <div class="item-details">
-                      <h3 class="title">{{ screenshot.caption.en }}</h3>
+                      <h3 class="title">{{ screenshot.caption.de }}</h3>
                     </div>
                   </a>
                 </li>
@@ -259,11 +258,11 @@
               <div class="col-lg-6">
                 <!-- logo -->
                 <div class="logo" title="Salim">
-                  <h1><a href="index.html">Salim Ahouad</a></h1>
+                  <h1><a href="de-index.html">Salim Ahouad</a></h1>
                 </div>
               </div>
               <div class="col-lg-6">
-                &copy; {{ copyrightDate }} Proudly Powered by
+                &copy; {{ copyrightDate }} Stolz angetrieben von
                 <a
                   href="linkedin.com/in/salimahouad/"
                   target="_blank"
@@ -279,7 +278,7 @@
         <button
           class="scroll-to-top"
           ref="scrollTopBtn"
-          title="Back To Top"
+          title="Nach oben"
           data-show-at="50"
           @click="scrollToTop"
         >

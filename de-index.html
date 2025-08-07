@@ -100,8 +100,9 @@
                       herzustellen!
                     </p>
                     <h4 class="block-title">
-                      Produkt ist die lebenswichtige Essenz dessen, was ich tue, wirklich großartige
-                      Produkte entstehen durch sorgfältige Planung und Prozesse. Hier bin ich spezialisiert!
+                      Das Produkt ist die lebenswichtige Essenz dessen, was ich tue, ein wirklich großartiges
+                      Produkt entsteht durch sorgfältige Planung und Prozesse. Das ist
+                      mein Spezialgebiet!
                     </h4>
                   </div>
 
@@ -145,7 +146,7 @@
               <li class="lang-switcher">
                 <ul class="lang-switcher-menu">
                   <li class="menu-item menu-item-has-children">
-                    <a href="#">De</a>
+                    <a href="#">Deutsch</a>
 
                     <ul class="sub-menu">
                       <li class="menu-item">
@@ -155,7 +156,7 @@
                         <a href="fr-index.html">Fr</a>
                       </li>
                       <li class="menu-item">
-                        <a href="de-index.html">De</a>
+                        <a href="de-index.html">Deutsch</a>
                       </li>
                       <li class="menu-item">
                         <a href="rtl-index.html">ع</a>
@@ -337,11 +338,12 @@
                     Ich kann Ihnen helfen!
                   </h2>
                   <p>
-                    Hallo! Ich bin Salim, ein leidenschaftlicher Entwickler, der sich darauf konzentriert, saubere 
-                    und intuitive Webanwendungen zu erstellen. Ich liebe es, Ideen durch kreative Lösungen in die Realität 
-                    umzusetzen und erweitere kontinuierlich mein Wissen über neue Fähigkeiten, Tools und Technologien. 
-                    Neben der Arbeit an Solo-Full-Stack-Projekten habe ich mit kreativen Teams zusammengearbeitet und 
-                    mich an täglichen Stand-ups, effektiver Kommunikation, Quellcodeverwaltung und Projektmanagement beteiligt.
+                    Hallo! Ich bin Salim, ein leidenschaftlicher Entwickler, der sich der Erstellung sauberer 
+                    und intuitiver Webanwendungen widmet. Ich liebe es, Ideen durch kreative Lösungen 
+                    in die Realität umzusetzen und erweitere kontinuierlich mein Wissen über 
+                    neue Fähigkeiten, Tools und Technologien. Neben der Arbeit an Solo-Full-Stack-Projekten 
+                    habe ich mit kreativen Teams zusammengearbeitet und an täglichen Stand-ups, 
+                    effektiver Kommunikation, Quellcodeverwaltung und Projektmanagement teilgenommen.
                   </p>
                   <div class="btns-container">
                     <a href="#contact" class="btn btn-primary">Mich einstellen</a>
@@ -371,7 +373,7 @@
                   </h2>
                   <p>
                     Ich entwickle einfache, intuitive und responsive Benutzeroberflächen,
-                    die Benutzern helfen, Dinge mit weniger Aufwand und Zeit zu erledigen
+                    die Benutzern helfen, Aufgaben mit weniger Aufwand und Zeit zu erledigen
                     mit diesen Technologien.
                   </p>
                   <div ref="skillsSwitchBtn" class="toggle-switch-btn">
@@ -482,7 +484,7 @@
               <div class="certificate-filters">
                 <button @click="filterCertificates('all')" 
                         :class="['filter-btn', { active: selectedCategory === 'all' }]">
-                  Alle Zertifikate
+                  Alle Zertifizierungen
                 </button>
                 <button @click="filterCertificates('web')" 
                         :class="['filter-btn', { active: selectedCategory === 'web' }]">
@@ -494,7 +496,7 @@
                 </button>
                 <button @click="filterCertificates('data')" 
                         :class="['filter-btn', { active: selectedCategory === 'data' }]">
-                  Datenwissenschaft & Analytics
+                  Datenwissenschaft & Analytik
                 </button>
                 <button @click="filterCertificates('cloud')" 
                         :class="['filter-btn', { active: selectedCategory === 'cloud' }]">
@@ -520,7 +522,7 @@
                       <h4 class="cert-title">{{ cert.title }}</h4>
                       <p class="cert-issuer">von {{ cert.issuer }}</p>
                       <p class="cert-date">{{ cert.date }}</p>
-                      <a :href="cert.url" target="_blank" class="cert-link link-hover">Zertifikat anzeigen</a>
+                      <a :href="cert.url" target="_blank" class="cert-link link-hover">Zertifizierung anzeigen</a>
                     </div>
                   </div>
                 </li>
@@ -529,7 +531,7 @@
               <!-- Show More Button -->
               <div class="show-more-container" v-if="currentCertificatesShown < filteredCertificates.length && filteredCertificates.length > certificatesToShow">
                 <button @click="showMoreCertificates()" class="show-more-btn link-hover">
-                  Mehr Zertifikate anzeigen ({{ currentCertificatesShown }}/{{ filteredCertificates.length }})
+                  Mehr Zertifizierungen anzeigen ({{ currentCertificatesShown }}/{{ filteredCertificates.length }})
                 </button>
               </div>
               
@@ -549,7 +551,7 @@
                     </div>
                     <div class="highlight-text">
                       <h4>Kontinuierliches Lernen</h4>
-                      <p>Verpflichtet, durch laufende Bildung und Zertifizierungsprogramme mit den neuesten Technologien und Branchenbest Practices auf dem Laufenden zu bleiben.</p>
+                      <p>Verpflichtet, mit den neuesten Technologien und Branchenbest Practices durch laufende Bildungs- und Zertifizierungsprogramme auf dem Laufenden zu bleiben.</p>
                     </div>
                   </div>
                   
@@ -559,7 +561,7 @@
                     </div>
                     <div class="highlight-text">
                       <h4>Professionelle Exzellenz</h4>
-                      <p>Jede Zertifizierung repräsentiert einen Meilenstein in meiner beruflichen Reise und demonstriert Expertise und Engagement für Qualität.</p>
+                      <p>Jede Zertifizierung repräsentiert einen Meilenstein in meiner beruflichen Laufbahn und demonstriert Expertise und Hingabe zur Qualität.</p>
                     </div>
                   </div>
                   
@@ -626,7 +628,7 @@
                     Ich entwickle seit {{ experienceYears }} Jahren Websites und Apps und kenne sicher die wichtigsten Trends und Richtungen
                     des modernen Designs. Ich war ein visionärer und zuverlässiger
                     Software-Engineering-Partner für Weltklasse-Marken. Sie
-                    werden ein anständiges Ergebnis bekommen, wie Sie es erwarten.
+                    werden ein anständiges Ergebnis erhalten, wie Sie es erwarten.
                   </p>
                 </div>
               </div>
@@ -652,12 +654,11 @@
                     <h2>
                       Sehen Sie meine Arbeiten, die
                       <br />
-                      Sie erstaunen werden!
+                      Sie begeistern werden!
                     </h2>
                     <p>
-                      Ich entwickle Websites von bester Qualität, die langfristig dienen.
-                      Gut dokumentierte, saubere, einfache und elegante Benutzeroberflächen
-                      helfen jedem nicht-technischen Kunden.
+                      Ich entwickle die besten Websites von bester Qualität, die langfristig dienen.
+                      Gut dokumentierte, saubere, einfache und elegante Benutzeroberflächen helfen jedem nicht-technischen Kunden.
                     </p>
                     <ul class="works-filter">
                       <li v-for="filter in filters" :key="filter">
@@ -678,7 +679,7 @@
                   v-for="work in filteredPortfolioItems"
                   :key="work.title.de"
                 >
-                  <a :href="de-' + work.url" rel="noopener">
+                  <a :href="'de-' + work.url" rel="noopener">
                     <div class="item-img">
                       <img :src="work.imgUrl" :alt="work.title.de" />
                     </div>
@@ -717,7 +718,7 @@
                 über mich sagen
               </h2>
               <p>
-                Ich habe hier etwa 20 Bewertungen aufgenommen. Um den Rest der Bewertungen zu überprüfen, 
+                Ich habe hier etwa 20 Bewertungen aufgenommen. Um den Rest der Bewertungen zu sehen, 
                 besuchen Sie gerne mein Profil auf <a href="https://www.fiverr.com/edcrow03" target="_blank" rel="noopener noreferrer"><strong>Fiverr</strong></a>.
               </p>
             </div>
@@ -766,7 +767,7 @@
                   <h2>
                     Haben Sie ein Projekt?
                     <br />
-                    Hinterlassen Sie eine Nachricht
+                    Hinterlassen Sie mir eine Nachricht
                   </h2>
                   <p>
                     Nehmen Sie Kontakt auf und lassen Sie mich wissen, wie ich helfen kann. Füllen Sie das
@@ -886,7 +887,7 @@
                         <input
                           class="minLength"
                           type="hidden"
-                          value="Name muss mindestens 3 Zeichen lang sein"
+                          value="Name muss mindestens 3 Zeichen enthalten"
                         />
                       </div>
                     </div>
@@ -1004,7 +1005,7 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                &copy; {{ copyrightDate }} Stolz angetrieben von
+                &copy; {{ copyrightDate }} Stolz betrieben von
                 <a
                   href="https://www.linkedin.com/in/salimahouad/"
                   target="_blank"
